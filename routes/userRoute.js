@@ -2,6 +2,8 @@ const express = require('express')
 const app = express.Router()
 var User = require('../model/user')
 var  Property = require('../model/property')
+var  Photos = require('../model/images')
+var  Notification = require('../model/notification')
 const jwt = require('jsonwebtoken')
 const sercet = "madam1234"
 
@@ -13,6 +15,18 @@ app.get('/register', (req, res) => {
 
 app.post('/property', (req, res) => {
     var data= new Property(req.body)
+    data.save()
+    res.send(data)
+})
+
+app.post('/notification', (req, res) => {
+    var data= new Notification(req.body)
+    data.save()
+    res.send(data)
+})
+
+app.post('/images', (req, res) => {
+    var data= new Photos(req.body)
     data.save()
     res.send(data)
 })

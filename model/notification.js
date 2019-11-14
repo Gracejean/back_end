@@ -4,13 +4,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var notify = new Schema({
-  message: {
-    type: String},
+  message: {type: String},
   date:{type:String},
 
 
 },
-  { collection: 'notification' }
+  { collection: 'notifications' }
 );
 
 var Notify = mongoose.model('Notify', notify);

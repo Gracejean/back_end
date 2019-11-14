@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var property = new Schema({
   location: {type:String},
   details: {type:String},
-  image: {type:String},
+  title: {type:String},
   price: {type:String}
 
 },
