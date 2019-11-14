@@ -4,6 +4,7 @@ var User = require('../model/user')
 var  Property = require('../model/property')
 var  Photos = require('../model/images')
 var  Notification = require('../model/notification')
+var Rooms = require('../model/rooms')
 const jwt = require('jsonwebtoken')
 const sercet = "madam1234"
 
@@ -27,6 +28,12 @@ app.post('/notification', (req, res) => {
 
 app.post('/images', (req, res) => {
     var data= new Photos(req.body)
+    data.save()
+    res.send(data)
+})
+
+app.post('/rooms',(req,res) => {
+    var data = new Rooms(req.body)
     data.save()
     res.send(data)
 })
