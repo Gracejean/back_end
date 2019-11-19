@@ -9,7 +9,7 @@ var property = new Schema({
   title: {type:String},
   price: {type:String}
 
-},
+},  
   { collection: 'property' }
 );
 

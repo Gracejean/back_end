@@ -57,6 +57,26 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.get('/properties', (req, res) => {
+    var locate = req.body.location
+    var find = Property.findOne()
+
+    find.exec(function(errr, result){
+        var place = result.location
+        if(locate == place){
+            res.send({
+                property:{
+                    location: result.location,
+                    details: result.details,
+                    title: result.title,
+                    price: result.price
+                },  
+                access_token: token
+            })
+        }
+    })
+})
+
 
 app.post("/register", (req, res) => {
     var response = { error: {}, data: {}, response_status: 200, access_token: null }

@@ -4,7 +4,7 @@ var mongoDB = 'mongodb://127.0.0.1/abang';
 console.log("connecting");
 mongoose.Promise = global.Promise;
 
-mongoose.connect(atlas, {
+mongoose.connect(mongoDB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
